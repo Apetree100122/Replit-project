@@ -1,0 +1,50 @@
+ 'react-native-wireguard';
+// WireGuard.Version().then((v)
+{version: v});
+
+var config = `
+    [Interface]
+    PrivateKey = mBEJJwnMh6Ht9xLp88nTtHqmOY9pnN7YdriotquvgVI=
+    Address = 192.168.7.237/32, fdaa::7f3/128
+    DNS = 192.168.0.0, fdaa::Peer
+    PublicKey = Cf0rdfToO5gxg7ObB6dLbTwfElO3Xx7Fh8jJobmqCnE=
+    AllowedIPs = 0.0.0.0/0, ::/0
+    Endpoint = 209.97.177.222:51820`; var session = 'MyVPNSession';
+var notif = {
+    icon: 'ic_notif_icon', // Name of the icon in /res directory
+    title: 'My VPN',
+    text: 'Connected to ' + country;
+}
+WireGuard.Connect(config, session, notif).catch(
+    (e)
+console.warn(e.message));
+WireGuard.Status().then((b) => {
+    if(b){
+        // Update state
+    }
+}
+WireGuard.Disconnect()
+
+componentDidMount() {
+    DeviceEventEmitter.addListener(WireGuard.EV_TYPE_SYSTEM, () 
+{
+		if(e === WireGuard.EV_STARTED_BY_SYSTEM) {
+		}
+    });
+    DeviceEventEmitter.addListener(WireGuard.EV_TYPE_EXCEPTION, () => {
+		console.log(e);
+    });
+
+    DeviceEventEmitter.addListener(WireGuard.EV_TYPE_REGULAR, () => {
+        if(e === WireGuard.EV_STOPPED) {
+            // Update state
+		} else if(e === WireGuard.EV_STARTED) {
+			// Update state
+		}
+    });
+}
+
+componentWillUnmount() {
+    DeviceEventEmitter.removeAllListeners();
+}
+
